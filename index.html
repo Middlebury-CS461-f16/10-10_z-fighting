@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>3D Triangles</title>
+    <script type="text/javascript" src="http://www.cs.middlebury.edu/~candrews/classes/cs461/js/midd-webgl-utils.js">
+      </script>
+      <script type="text/javascript" src="http://www.cs.middlebury.edu/~candrews/classes/cs461/js/gl-matrix.js">
+
+      </script>
+      <script type="text/javascript" src="zfighting.js">
+
+      </script>
+  </head>
+  <body>
+    <canvas id="canvas" width="500" height="500"></canvas>
+
+    <h1>Z-Fighting</h1>
+		<p>
+			Here we have two triangles that are drawn at the same depth. In theory, they should now be drawn in the order that we requested them to be rendered. However, precision errors lead to z-fighting, where the interpolated pseudodepth values vary and the triangles seem to be melting into one another. </p>
+
+			<p>We can address this by using polygon offset, which is a hack that allows us to add an offset to the depth after the projection.</p>
+
+		<p>Toggle polygon offset: <input type="checkbox" id="toggle" /></p>
+  </body>
+</html>
